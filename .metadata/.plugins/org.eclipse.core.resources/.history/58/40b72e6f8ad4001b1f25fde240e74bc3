@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>테이블 예제</title>
+</head>
+<body>
+<h3>테이블</h3>
+<table border="1" width="300px">
+	<caption>회원정보</caption>
+	<tr height="50px">
+		<th>순번</th>
+		<th>아이디</th>
+		<th>이름</th>
+		<th>마일리지</th>
+	</tr>
+	
+	<tr height="30px">
+		<th>1</th>
+		<th>user01</th>
+		<th>홍길동</th>
+		<th>15000</th>
+	</tr>
+	
+	<tr height="30px">
+		<th>2</th>
+		<th>user02</th>
+		<th>강감찬</th>
+		<th>95000</th>
+	</tr>
+	
+	<tr height="50px">
+		<th>2</th>
+		<th>user02</th>
+	</tr>
+</table>
+</body>
+</html>

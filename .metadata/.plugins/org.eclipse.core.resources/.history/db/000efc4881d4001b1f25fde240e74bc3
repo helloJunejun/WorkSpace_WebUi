@@ -1,0 +1,47 @@
+<!--  문서타입 선언문 : html4 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!--  root tag -->
+<html lang="ko">
+<!--  html 문서에 대한 부가적인 파싱 정보
+	1. mime-type, character encoding 설정
+	2. title 문서 제목
+	3. css 설정
+	4. javascript 설정
+	5. 검색엔진 키워드 설정
+ -->
+	<head>
+	<!--  mime-type, charcter encoding 설정 -->
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<!--  문서(document) 제목, 즐겨찾기시에 기본 텍스트 -->
+		<title>로그인 | MMS</title>
+	</head>
+	
+	<!-- 브라우저에 서비스(보여지는) 내용 -->
+	<body>
+	<a href="index.html"><img src="img/pictogram2.png"></a>
+	<h3>회원관리시스템</h3>
+		<hr>
+		<a href="login.html">로그인</a>
+		<a href="joinMember.html">회원가입</a>
+		<a href="findMember.html">아이디/비밀번호찾기</a>
+		<hr>
+	<h1>[로그인]</h1>
+	<form action="result.html" method="post">
+		아이디:<input type="text" name="memberId"><br>
+		비밀번호:<input type="password" name="memberPw"><br>
+		비밀번호확인<input type="password" name="memberPw"><br>
+		이름:<input type="password" name="memberPw"><br>
+		휴대폰:<input type="password" name="memberPw"><br>
+		이메일:<input type="password" name="memberPw">
+		
+		
+		<input type="submit" value="회원가입">
+		<input type="reset" value="취  소">
+		
+		
+	</form>
+	
+	</body>
+</html>

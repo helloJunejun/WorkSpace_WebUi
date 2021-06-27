@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML5 FORM 예제</title>
+</head>
+<body>
+<h3>HTML5 FORM</h3>
+<form action="" method="get">
+<h1>[회원가입]</h1>
+	<form action="result.html" method="post">
+		아이디:<input type="text" name="memberId"><br>
+		비밀번호:<input type="password" name="memberPw"><br>
+		비밀번호확인<input type="password" name="memberPw"><br>
+		이름:<input type="text" name="name"><br>
+		휴대폰:<input type="text" name="mobile"><br>
+		이메일:<input type="text" name="email"><br>
+		
+		
+		<input type="submit" value="회원가입">
+		<input type="reset" value="취  소">
+		
+		
+	</form>
+</form>
+</body>
+</html>

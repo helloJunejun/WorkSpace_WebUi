@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>HTML5 FORM 예제</title>
+</head>
+<body>
+   <h3>HTML5 FORM</h3>
+   
+   <form action="" method="get">
+      <h1>회원가입</h1>
+
+
+      <table border="1" cellspacing="2px" cellpading="5px" bgcolor="AntiqueWhite">
+            <form action = "result.html" method = "post">
+            <fieldset>
+                <legend>로그인</legend>
+                     <!-- 아이디 -->
+                     
+                     <tr>
+                        <td align="center">아이디</td>
+                        <td>
+                           <input type = "text" name="memberId" autofocus="autofocus" " 
+                           placeholder="영문+숫자 조합 30자리 입력" style="width:250px"
+                           pattern="[A-Za-z0-9]{6,30}">
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td align="center">비밀번호</td>
+                        <td>
+                           <input type = "password" name="memberPw"   placeholder="영문+숫자+특수문자 조합 20자리 입력"
+                           style="width:250px"> <br>
+                           <input type = "checkbox" name="visiblePw">   비밀번호 보기
+                        </td>
+                     </tr>
+                    </fieldset>   
+                     
+                     <tr>
+                        <td align="center">비밀번호 확인</td>
+                        <td><input type = "password" name="memberPwConfirm"  ></td>
+                     </tr>
+                     
+                     <tr>
+                        <td align="center">이름</td>
+                        <td><input type = "password" name="name"  required = "requirde" ></td>
+                     </tr>
+                     
+                     <tr>
+                        <td align="center">휴대폰</td>
+                        <td>   
+                           <input type = "password" name="mobile"  placeholder=" ex)01012345678">
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td align="center">테스트 </td>
+                        <td>
+                           <input type = "date" name="date" " value="2021-05-17" > 
+                        </td>
+                     </tr>
+                     
+                     
+                     <tr>
+                        <td align="center">숫자 </td>
+                        <td>
+                           <input type = "number" name="date" value="2"  min="2" max="10" step="2"> 
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td align="center">파일 : 다중 파일</td>
+                        <td>
+                           <input type = "file" name="file"  multiple="multiple"> 
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td align="center">파일 : 단일 파일</td>
+                        <td>
+                           <input type = "file" name="file" > 
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td align="center">전화번호</td>
+                        <td>
+                           <input type = "mobile" name="mobile" 
+                           placeholder="010-1234-5678" pattern="(010/02/031/051)-\d{3,4}-\d{4}"> 
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td align="center">이메일 </td>
+                        <td>
+                           <input type = "text" name="email1" > 
+                           <input type = "text" name="email2"  >
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td align="center">이메일2</td>
+                        <td>
+                           <input type = "text" name="email2">
+                        
+                           <select name = "selectEmail">
+                              <option value = "none"> 선택 </option>
+                              <option value = "@naver.com"> 네이버 </option>
+                              <option value = "@gmail.com"> 구글 </option>
+                              <option value = "@daum.net"> 다음 </option>
+                              <option value = "userInput"> 직접 입력 </option>
+                           </select>         
+                        </td>
+                     </tr>
+                     
+            
+                     <tr>
+                        <td align="center" colspan="2" align="center">
+                           <input type = "submit" value = "회원가입" >
+                           <input type = "reset" value = "취소">
+                        </td>
+                     </tr>
+               
+                     
+               </form>
+         </table>
+         
+         
+         
+   
+   </form>
+
+</body>
+</html>
