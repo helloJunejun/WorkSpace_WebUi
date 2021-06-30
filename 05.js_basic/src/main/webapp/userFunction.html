@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>User Function</title>
+<style type="text/css">
+table tr td{
+border: solid 1px #300
+}
+</style>
+<script type="text/javascript">
+	/* 함수 선언 */
+	function hello() {
+		document.write("<h3>안녕</h3>");
+	}
+	
+	
+/* 	 2개의 숫자 데이터를 입력받아서 시작단 ~ 종료단까지의 구구단 출력 함수 
+	function gugudan(startDan, endDan) {
+		console.log(startDan);
+		console.log(endDan);
+		total = 0;
+		for(i = startDan; i < 9; i++ ) {
+			for(endDan; j < 9; j++) {
+				total = startdan * endDan;
+				document.write(i + "x" + j + "=");
+			}
+		}
+	} 
+ */
+	
+	
+	/* 2개의 숫자 데이터를 입력받아서 시작단 ~ 종료단까지의 구구단 출력 함수
+	-- 테이블 보여주기
+	-- 체크사항
+	1. 입력여부
+	2. 숫자여부
+	3. 정수형 명시적 형변환
+	4. 양의정수
+	5. 시작단 < 종료단 : 시작단이 종료단보다 작음, 만약에 시작단이 큰 경우 어떻게 처리해줄지 여부??
+	*/
+	function gugudan(startDan, endDan) {
+		document.write("<table>");
+		document.write("<caption>구구단</caption>");
+		
+		// 제목행
+		document.write("<tr>");
+		for(dan = startDan; dan <= endDan; dan++) {
+			document.write("<th>" + dan + "단</th");
+		}
+		document.write("</tr>");
+		
+		// 구구단 수행 반복
+		for(step = 1; step <= 9; step++) {
+			document.write("<tr>");
+			for(dan = startDan; dan <= endDan; dan++) {
+				document.write("<td>" + dan + "*" + step + "=" + (dan*step)+ "</td>");
+			}
+		document.write("</tr>");
+ 		}
+		document.write("</table>");
+ 	}
+
+</script>
+</head>
+<body>
+<h3>User Function</h3>
+<script type="text/javascript">
+	/* <!-- 함수 호출 수행  --> */
+	/* hello();
+	hello(); */
+	var startDan = prompt("시작단 입력 : ", "");
+	var endDan = prompt("끝단 입력 : ", "");
+	gugudan(startDan, endDan);
+</script>
+</body>
+</html>

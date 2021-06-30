@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Window 내장함수</title>
+
+<!-- js : internal -->
+<script type="text/javascript">
+	/* 사용자 주문수량 입력받아서 주문내역 출력 
+		상품 가격 : 10,000
+		주문 수량 : 1 ~ 10개 제한
+		
+		# 사용기술(함수)
+		-- 변수 선언, 주문수량입력, 주문수량 데이터 검증, 숫자여부 검증, 동적화면출력제어, 연산자, 정수형 변환
+		-- prompt()
+		-- isNan()
+		-- parseInt()
+		-- alert()
+		-- confirm()
+		
+		# 체킹사항
+		-- 주문수량 데이터 검증
+		1. 입력여부
+		2. 숫자데이터여부
+		3. 데이터 범위 : 1  ~ 10 => 숫자데이터 형변환
+		4. 최종 주문내역 보여주기
+		5. 최종 주문여부 확인
+		6. 주문처리
+		7. 주문취소처리
+	*/
+	
+/* 	var num = prompt("사용자 주문내역 상품 가격 10,000 \n 수량을 입력하세요 : ", 1);
+
+	var price = 10000;
+	var total = 0;
+	
+		//num;
+	if(isNaN(num) && !("")) {
+		document.write("숫자를 입력해주세요.");
+	} else if(num <= 10) {
+		total = price * parseInt(num);
+		document.write("총 주문가격 : " + total);
+		
+		confirm = confirm(total +"\n주문가격이 맞으면 확인 버튼을 눌러주세요.");
+		confirm;
+		
+	} else if(confirm) {
+		document.write("주문 처리 완료" + total);
+		
+	} else {
+		document.write("1 ~ 10 사이에 숫자를 입력해주세요.");
+	}
+ */
+ 
+ 	var price = 10000;
+ 
+ 	var quantity = prompt("주문수량을 입력하세요", "");
+ 	console.log("주문수량 : " + quantity);
+ 	console.log("데이터타입 : " + typeof quantity);
+ 	if(quantity != "") {
+ 		if(isNaN(quantity)) {
+ 			alert("[오류] 주문수량은 숫자로 입력하시기 바랍니다.");
+ 		} else {
+ 			if(quantity >= 1 && quantity <= 10) {
+	 			var orderPrice = price * parseInt(quantity);
+	 			console.log("orderPrice : " + orderPrice)
+	 			
+	 			// var message;	// 변수만 선언하면 undefined
+	 			var message = ""; // 해결 : undefined => 공백문자열 초기화 처리
+	 			message += "주문내역정보";	//	undefined주문내역정보 문제 => 주문내역정보
+	 			message += "\n상품가격 : " + price;
+	 			message += "\n주문수량 : " + quantity;
+	 			message += "\n주문총액 : " + orderPrice;
+	 			message += "\n-----------------------";
+	 			message += "\n주문 하시겠습니까?";
+	 			
+	 			var isOrder = confirm(message);
+		 			if(isOrder) {
+		 				document.write("[주문완료]");
+		 			} else {
+		 				document.write("[주문취소]");
+		 			}
+ 			} else {
+ 				alert("[오류] 주문수량은 1~10사이로 입력하시기 바랍니다.");
+ 			}
+ 			}
+ 	} else {
+ 		alert("[오류] 주문수량을 입력하시기 바랍니다.");
+ 	}
+ 
+ 
+</script>
+</head>
+<body>
+<h3>Window 내장함수</h3>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -3,18 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <title>이미지뷰</title>
+<!-- css : internal -->
+<style type="text/css">
+	/*
+	
+		-- 모든 .jpg 이미지 적용
+		-- img/flower
+		-- flower
+	
+	*/
+	/* 이미지 확장자가 .jpg 처리 */
+	img[src$=".jpg"] {
+		width: 120px;
+		height: 210px;
+	}
+	
+	/* 이미지에 마우스가 왔을대 처리 */
+	img:hover { 
+		border: solid 3px red;	
+	}
+	
+</style>
+
 </head>
 <body>
 <h3>이미지뷰</h3>
-<img src="img/1.jpg">
-<img src="img/2.jpg">
-<img src="img/3.jpg">
-<img src="img/4.jpg">
-<img src="img/5.jpg">
-<img src="img/6.jpg">
-<img src="img/7.jpg">
-<img src="img/8.jpg">
-<img src="img/9.jpg">
-<img src="img/10.jpg">
+<table border="1"; margin: auto;>
+	<tr>
+		<td><img src="img/1.jpg"></td>
+		<td><img src="img/2.jpg"></td>
+		<td><img src="img/3.jpg"></td>
+		<td><img src="img/4.jpg"></td>
+		<td><img src="img/5.jpg"></td>
+	</tr>
+	<tr>
+		<td><img src="img/6.jpg"></td>
+		<td><img src="img/7.jpg"></td>
+		<td><img src="img/8.jpg"></td>
+		<td><img src="img/9.jpg"></td>
+		<td><img src="img/10.jpg"></td>
+	</tr>
+</table>
 </body>
 </html>
