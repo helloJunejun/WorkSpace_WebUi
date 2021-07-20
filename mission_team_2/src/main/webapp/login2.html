@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인</title>
+<style type="text/css">
+
+
+ h1 {
+	display: block;
+    text-align: center;
+}
+#loginForm {
+	display: block;
+    text-align: center;
+} 
+
+input[type=text] {
+	width:250px;
+	height:40px;
+}
+input[type=password] {
+	width:250px;
+	height:40px;
+}
+
+</style>
+
+<script type="text/javascript">
+	/* 윈도우 로드 이벤트 함수 */
+	window.onload = function() {
+	// document.joinForm.memberId.focus();
+	// initForm();
+}
+
+function initForm() {
+	// 폼양식 > 입력항목 이름
+	//document.joinForm.memberId.focus();
+	
+	// 폼양식 > 입력항목 id
+	document.getElementById("memberId").focus();
+}
+
+function checkId() {
+	// 아이디 입력 데이터 가져오기 : id
+	var memberId = document.getElementById("memberId").value;
+	console.log("memberId : " + memberId);
+	
+	if(memberId == "" || memberId.trim().length == 0) {
+		document.getElementById("memberId").focus();
+		document.getElementById("memberIdMsg").innerHTML = "아이디를 입력하세요";
+		document.getElementById("memberIdMsg").style.color = "red";
+		document.getElementById("memberId").style.border = "solid 3px red";
+		document.getElementById("memberId").value = ""; // 사용자 입력 공백문자열 초기화
+		return false; // input type="submit"
+	} else if(CheckEmail(memberId)) {
+		document.getElementById("memberIdMsg").innerHTML = "이메일주소가 올바르지 않습니다.";
+		document.getElementById("memberIdMsg").style.color = "red";
+		document.getElementById("memberId").style.border = "solid 3px red";
+	} else {
+		document.getElementById("memberId").style.border = "solid 1px black";
+		document.getElementById("memberIdMsg").innerHTML = "";
+	}
+	memberId = memberId.trim() // 사용자 입력데이터에 있는 공백데이터 제거
+	
+	
+	return false;
+}
+
+//이메일이 잘못되었는지 확인하는 함수 
+
+function CheckEmail(str) {                                                 
+     var reg_email = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
+
+     if(!reg_email.test(str)) {                            
+          return true;         
+     }                            
+     else {                       
+          return false;         
+     }                         
+}     
+
+
+function checkPw() {	
+	// 비밀번호 입력 데이터 가져오기 : name
+	var memberPw = document.getElementById("memberPw").value;
+	console.log("memberPw : " + memberPw);
+	
+	if(memberPw == "" || memberPw.trim().length == 0) {
+		document.getElementById("memberPw").focus();
+		document.getElementById("memberPwMsg").innerHTML = "비밀번호를 입력하세요";
+		document.getElementById("memberPwMsg").style.color = "red";
+		document.getElementById("memberPw").style.border = "solid 3px red";
+		document.getElementById("memberPw").value = "";
+		return false; // input type="submit"
+	} else {
+		document.getElementById("memberPw").style.border = "solid 1px black";
+		document.getElementById("memberPwMsg").innerHTML = "";
+	}
+	memberPw = memberPw.trim() // 사용자 입력데이터에 있는 공백데이터 제거
+			
+	return false;
+	// 이 부분을 추가하면 action으로 이동되지 않음므로 console에서 입력데이터 확인가능
+}
+
+</script>
+</head>
+<body>
+<h1>로그인</h1>
+
+<div id="loginForm">
+<form action = "#" method = "post">
+	<div>이메일</div>
+	<div>
+		<input type ="text" name="memberId" id="memberId" placeholder="example@work.com" onkeyup="return checkId()">
+    </div>
+	<span id="memberIdMsg"></span>
+	
+	<div>비밀번호</div>
+	<div>
+		<input type="password" name="memberPw" id="memberPw" placeholder="비밀번호를 입력해주세요." onkeyup="return checkPw()">
+	</div>
+	<span id="memberPwMsg"></span>
+	
+	<div>
+		<a href="#">비밀번호 찾기</a>
+	</div>
+	
+	<div>
+		<input type="submit" value="이메일 로그인" > <!-- onclick="return checkForm();" -->
+	</div>
+		
+</form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인</title>
+<style type="text/css">
+
+/* body {
+	background-color:#FAFAFA;
+} */
+
+header {
+  display: flex;
+  background: white;
+  padding: 20px;
+  border-style:1px;
+  height:50px;
+  
+}
+nav {
+  margin-left: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+ul.topMenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+li.icon {
+  flex-basis: 25%;
+}
+a.hederA {
+  display: block;
+  text-align: center;
+  margin: .25rem;
+  padding: .5rem 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  color: grey;
+}
+ a.hederA:hover {
+  background: yellowgreen;
+}
+
+
+#main {
+	background-color:#FAFAFA;
+	height:1000px;
+	
+}
+
+#bacgroundImage {
+	height:300px;
+	width:auto;
+	text-align:center;
+	vertical-align:middle;
+	
+
+}
+div#mainTitle {
+	padding-top:100px;
+	font-size:xx-large;
+	font-weight:bold;
+	color:white;
+}
+div#mainBody {
+	vertical-align:middle;
+	color:white;
+}
+
+
+h1 {
+	display: block;
+    text-align: center;
+    padding-top:130px;
+}
+
+#table1 {
+	margin-left:auto; 
+    margin-right:auto;
+    background-color:white;
+    width:400px;
+    height:300px;
+    padding-top:30px;
+    border-radius: 12px;
+}
+
+table {
+	width:auto;
+	height:auto;
+	margin-left:auto; 
+    margin-right:auto;
+    margin-top:100px;
+}
+
+table td.title {
+	padding-top:0;
+	font-size:x-large;
+	font-weight:bold;
+	color:#00C7AE;
+	
+}
+
+table td.body {
+	padding-top:0;
+	vertical-align: top;
+	
+}
+
+a#findPw {
+	color:gray;
+}
+
+a#joinMember {
+	color:gray;
+	text-decoration:none;
+	
+}
+    
+/* table, td, th {
+    border-collapse : collapse;
+    border : 1px solid black;
+} */
+
+input[type=text] {
+	width:250px;
+	height:40px;
+	border-radius: 12px;
+	border:1px gray solid;
+}
+input[type=password] {
+	width:250px;
+	height:40px;
+	border-radius: 12px;
+	border:1px gray solid;
+}
+
+input[type=submit] {
+	width:260px;
+	height:40px;
+	border-radius: 12px;
+	border:1px solid;
+	background-color:#00C7AE;
+	color:white;
+}
+
+</style>
+
+<script type="text/javascript">
+	/* 윈도우 로드 이벤트 함수 */
+	window.onload = function() {
+	// document.joinForm.memberId.focus();
+	// initForm();
+}
+
+function initForm() {
+	// 폼양식 > 입력항목 이름
+	//document.joinForm.memberId.focus();
+	
+	// 폼양식 > 입력항목 id
+	document.getElementById("memberId").focus();
+}
+  
+
+</script>
+</head>
+<body>
+
+<header>
+		<a href="login2.html"><img src="./img/logo.png" style="height:40px; padding-top:5px;padding-left:5px;"></a>
+		<nav>
+			<ul class="topMenu">
+			<li> <a href="joinGosuMember.html" class="hederA" id="heaerA1">고수가입</a> </li>
+			<li> <a href="JoinMember.html" class="hederA">회원가입</a> </li>
+			<li> <a href="usersGuide.html" class="hederA">이용안내</a> </li>
+			<li> <a href="findGosuMember.html" class="hederA">고수찾기</a> </li>
+			<li> <a href="login.html" class="hederA">로그인</a> </li>
+			</ul>
+		</nav>
+	</header>
+
+<main>
+
+<div id="bacgroundImage" style="background-image: url('./img/main15.jpg');"> 
+	<div id="mainTitle">숨고를 통해 어떤 일이든 해결하세요</div><br>
+	<div id="mainBody">필요사항만 체크하고 인정받은 고수를 소개 받으세요. 숨고와 함께라면 어떤 일이든 이룰 수 있어요.</div>
+</div>
+
+<h1>숨은 고수 찾기는 어떻게 이루어질까요?</h1>
+
+	
+<!-- 	<div id="table1"> -->
+	
+	<table> <!-- id="table2"  -->
+	
+	<tr><!-- 첫번째 줄 시작 -->
+	    <td class="title">고수를 소개받으세요</td>
+	    <td rowspan="2"> <img src="./img/table1.jpg"> </td>
+	</tr><!-- 첫번째 줄 끝 -->
+	<tr><!-- 두번째 줄 시작 -->
+	    <td class="body">도움이 필요한 일과 조건만 알려주세요.<br> 숨고가 딱! 맞는 고수를 무료로 소개해 드릴게요.</td>
+	  <!-- <td>두번째 칸</td> -->
+	</tr>
+	
+	<tr><!-- 첫번째 줄 시작 -->
+	    <td rowspan="2"><img src="./img/table2.jpg"></td>
+	    <td class="title">고수들을 비교해보세요</td>
+	</tr><!-- 첫번째 줄 끝 -->
+	<tr><!-- 두번째 줄 시작 -->
+	    <td class="body">요청 후 최대 48시간 내로 맞춤 견적이 전달됩니다.<br>견적을 받아보고 다음 정보들을 비교해보세요.<br> 가격 / 고객후기 / 채팅 / 프로필 / 안심번호</td>
+	  <!-- <td>두번째 칸</td> -->
+	</tr>
+	
+	<tr><!-- 첫번째 줄 시작 -->
+	    <td class="title">나에게 딱! 맞는 고수를 선택하세요</td>
+	    <td rowspan="2"> <img src="./img/table3.jpg"> </td>
+	</tr><!-- 첫번째 줄 끝 -->
+	<tr><!-- 두번째 줄 시작 -->
+	    <td class="body">쨘! 도움을 줄 수 있는 고수를 무료로 찾았습니다.<br>
+	    	직접 연락을 통해 고수의 정보를 더 얻을 수 있어요.
+	    </td>
+	  <!-- <td>두번째 칸</td> -->
+	</tr>
+	
+	</table>
+</main>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<footer style="background-color:white;">
+
+	<table style="margin:auto;">
+ 
+	<tr><!-- 첫번째 줄 시작 -->
+	    <td style="width:500px; color:#00C7AE; font-size:x-large; font-weight:bold;">1599-5319</td>
+	    <td style="font-size:small; font-weight:bold;">숨고소개</td>
+	    <td style="font-size:small; font-weight:bold; padding-left:30px;">고객안내</td>
+	    <td style="font-size:small; font-weight:bold; padding-left:30px;">고수안내</td>
+	    <td style="font-size:small; font-weight:bold; padding-left:30px;">고객센터</td>
+	</tr><!-- 첫번째 줄 끝 -->
+	
+	<tr><!-- 두번째 줄 시작 -->
+	    <td valign=top style="width:500px; font-size:small; color:#737373;">평일 10:00 - 18:00<br>
+		(점심시간 13:00 - 14:00 제외 · 주말/공휴일 제외)
+		</td>
+	    <td valign=top style="font-size:small; color:#737373;">
+			<ul style="list-style: none; padding:0; margin:0; ">
+				<li>회사소개</li>
+				<li>채용안내</li>
+			</ul>
+	    </td>
+	    <td valign=top style="font-size:small; color:#737373;">
+			<ul style="list-style: none;  padding-left:30px; margin:0;">
+				<li>이용안내</li>
+				<li>안전정책</li>
+				<li>예상금액</li>
+				<li>고수찾기</li>
+				<li>숨고보증</li>
+			</ul>
+	    </td>
+	    <td valign=top style="font-size:small; color:#737373;">
+			<ul style="list-style: none;  padding-left:30px; margin:0;">
+				<li>이용안내</li>
+				<li>고수가이드</li>
+				<li>고수가입</li>
+				<li>고수센터</li>
+			</ul>
+	    </td>
+	    <td valign=top style="font-size:small; color:#737373;">
+			<ul style="list-style: none;  padding-left:30px; margin:0;">
+				<li>공지사항</li>
+				<li>자주묻는질문</li>
+			</ul>
+	    </td>
+	</tr><!-- 두번째 줄 끝 -->
+	
+	<tr><!-- 세번째 줄 시작 -->
+	    <td valign=top colspan="5"  style="height:200px;font-size:x-small; color:#737373;">이용약관 개인정보처리방침 사업자정보확인<br><br>
+			(주)브레이브모바일은 통신판매중개자로서 통신판매의 당사자가 아니며 개별 판매자가 제공하는 서비스에 대한 이행, 계약사항 등과 관련한 의무와 책임은 거래당사자에게 있습니다.<br><br>
+			상호명:(주)브레이브모바일 · 대표이사:KIM ROBIN H · 개인정보책임관리자:김태우 · 주소:서울특별시 강남구 테헤란로 431, 14층(삼성동, 라이언타워)<br>
+			사업자등록번호:120-88-22325 · 통신판매업신고증:제 2015-서울강남-00567 호 · 직업정보제공사업 신고번호:서울청 제 2019-21호<br>
+			고객센터:1599-5319 · 이메일:support@soomgo.com<br>
+			Copyright ©Brave Mobile Inc. All Rights Reserved.
+		</td>
+	</tr><!-- 두번째 줄 끝 -->
+	
+
+	</table>
+
+
+</footer>
+
+</body>
+</html>

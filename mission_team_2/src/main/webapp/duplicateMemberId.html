@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>아이디중복</title>
+<script type="text/javascript">
+
+	/* 회원 아이디 배열 선언 및 저장 구조 */
+	var memberIdArray = ["user01", "user02", "user03"];
+	
+	window.onload = function() {
+		// 부모창의 아이디객체 가져오기 window.opener
+		var parentMemberId = window.opener.document.getElementById("memberId");
+		
+		// 자식창의 아이디객체 가져오기
+		var childMemberId = document.getElementById("memberId");
+		
+		// 부모창의 입력아이디를 자식창의 입력아이디로 초기화 변경
+		childMemberId.value = parentMemberId.value;
+		
+		// 자식창의 아이디 포커스
+		childMemberId.focus();
+		
+		// 아이디 사용하기 버튼 비활성화
+		document.getElementById("btn_use_memberId").disabled = true;
+	}
+	
+	function idCheck() {
+		// 아이디 입력데이터 가져오기
+		var memberId = document.getElementById("memberId").value;
+		
+		// 메세지 출력객체 가져오기
+		var memberIdMsg = document.getElementById("memberIdMsg");
+		
+		// memberIdArray 크기만큼 반복 비교하면서 아이디 존재유무 체킹
+		for(index=0; index < memberIdArray.length; index++) {
+			if(memberId == memberIdArray[index]) {
+				memberIdMsg.innerHTML = "사용불가 아이디입니다.";
+				memberIdMsg.style.color = "red";
+				document.getElementById("memberId").focus();
+				return;
+			} 	
+		}
+		memberIdMsg.innerHTML = "사용가능 아이디입니다.";
+		memberIdMsg.style.color = "green";
+		
+		// 아이디 사용하기 버튼 활성화
+		document.getElementById("btn_use_memberId").disabled = false;
+	}
+	
+	/* 아이디 입력시 아이디중복검증 메세지 지우기 */
+	function clearMsg() {
+		// 메세지 출력객체 가져오기
+		var memberIdMsg = document.getElementById("memberIdMsg");
+		memberIdMsg.innerHTML = "";
+		
+		// 아이디 사용하기 버튼 비활성화
+		document.getElementById("btn_use_memberId").disabled = true;
+	}
+	
+	/* 아이디 사용하기 버튼 이벤트 
+		-- 자식창에서 검증받은 아이디 정보를
+		-- 부모창에 아이디로 초기화시켜주고
+		-- 부모창에 아이디를 일기전용으로 변경해주고
+		-- 자식창 닫기
+	*/
+	function useMemberId() {
+		// 부모창의 아이디객체 가져오기 window.opener
+		var parentMemberId = window.opener.document.getElementById("memberId");
+		
+		// 자식창의 아이디객체 가져오기
+		var childMemberId = document.getElementById("memberId");
+		
+		// 자식창의 검증받은 입력아이디를 부모창의 입력아이디로 변경 설정
+		 parentMemberId.value = childMemberId.value;
+		
+		// 부모창의 멤버아이디를 검증받은 아이디를 변경할수없도록 읽기전용으로 변경
+		 parentMemberId.readOnly = true;
+		
+		// 자식창 닫기
+		window.close();
+		
+	}
+
+</script>
+</head>
+<body>
+<h3>아이디 중복</h3>
+<!-- 아이디 중복 입력 화면 구현
+	1. 아이디 입력
+	2. 수행결과 메세지 출력 영역 : 사용가능한 아이디입니다. 사용불가능한 아이디입니다.
+	3. 아이디중복 확인버튼
+	4. 아이디사용하기 확인버튼
+ 	5. 창닫기 확인버튼
+ -->
+ 
+ <div>
+ <form action="result.html" method="post" name="idCheckForm" id="idCheckForm">
+ 
+ 		<div>
+			아이디<br> 
+			<input type="text" name="memberId" id="memberId" onkeydown="clearMsg()">
+			<input type="button" value="아이디중복 확인" onclick="idCheck()">
+		</div>
+		<div id="memberIdMsg">메세지 출력 영역</div>
+		
+		<div>
+			<input type="button" id="btn_use_memberId" value="아이디사용하기" onclick="useMemberId()">
+			<input type="button" value="창닫기" onclick="window.close()">
+		</div>
+ 
+ </form>
+ 
+ 
+ </div>
+ 
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인</title>
+<style type="text/css">
+
+/* body {
+	background-color:#FAFAFA;
+} */
+
+header {
+  display: flex;
+  background: white;
+  padding: 20px;
+  border-style:1px;
+  height:50px;
+  
+}
+nav {
+  margin-left: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+ul.topMenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+li.icon {
+  flex-basis: 25%;
+}
+a.hederA {
+  display: block;
+  text-align: center;
+  margin: .25rem;
+  padding: .5rem 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  color: grey;
+}
+a#hederA1 {
+  display: block;
+  text-align: center;
+  margin: .25rem;
+  padding: .5rem 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  color: grey;
+  background-color:#FAFAFA;
+  
+   width:80px;
+   line-height:30px;
+}
+
+
+a.hederA:hover {
+  background: yellowgreen;
+}
+
+
+
+main {
+	background-color:#FAFAFA;
+	height:1000px;
+	
+}
+
+footer {
+	background-color:white;
+}
+
+h1#h2 {
+	display: block;
+    text-align: center;
+    padding-top:160px;
+}
+
+#table1 {
+	margin-left:auto; 
+    margin-right:auto;
+    background-color:white;
+    width:400px;
+    height:300px;
+    padding-top:30px;
+    border-radius: 12px;
+}
+
+#table2 {
+	margin-left:auto; 
+    margin-right:auto;
+}
+
+a#findPw {
+	color:gray;
+}
+
+a#joinMember {
+	color:gray;
+	text-decoration:none;
+	
+}
+    
+/* table, td, th {
+    border-collapse : collapse;
+    border : 1px solid black;
+} */
+
+input[type=text] {
+	width:250px;
+	height:40px;
+	border-radius: 12px;
+	border:1px gray solid;
+}
+input[type=password] {
+	width:250px;
+	height:40px;
+	border-radius: 12px;
+	border:1px gray solid;
+}
+
+input[type=button] {
+	width:260px;
+	height:40px;
+	border-radius: 12px;
+	border:1px solid;
+	background-color:#00C7AE;
+	color:white;
+}
+
+
+
+</style>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript">
+	/* 윈도우 로드 이벤트 함수 */
+	window.onload = function() {
+	// document.joinForm.memberId.focus();
+	// initForm();
+}
+
+function initForm() {
+	// 폼양식 > 입력항목 이름
+	//document.joinForm.memberId.focus();
+	
+	// 폼양식 > 입력항목 id
+	document.getElementById("memberId").focus();
+}
+
+function checkId() {
+	// 아이디 입력 데이터 가져오기 : id
+	var memberId = document.getElementById("memberId").value;
+	console.log("memberId : " + memberId);
+	
+	if(memberId == "" || memberId.trim().length == 0) {
+		document.getElementById("memberId").focus();
+		document.getElementById("memberIdMsg").innerHTML = "아이디를 입력하세요";
+		document.getElementById("memberIdMsg").style.color = "red";
+		document.getElementById("memberId").style.border = "solid 3px red";
+		document.getElementById("memberId").value = ""; // 사용자 입력 공백문자열 초기화
+		return false; // input type="submit"
+	} else if(checkEmail(memberId)) {
+		document.getElementById("memberIdMsg").innerHTML = "이메일주소가 올바르지 않습니다.";
+		document.getElementById("memberIdMsg").style.color = "red";
+		document.getElementById("memberId").style.border = "solid 3px red";
+	} else {
+		document.getElementById("memberId").style.border = "solid 1px black";
+		document.getElementById("memberIdMsg").innerHTML = "";
+	}
+	memberId = memberId.trim() // 사용자 입력데이터에 있는 공백데이터 제거
+	
+	
+	return false;
+}
+
+//이메일이 잘못되었는지 확인하는 함수 
+function checkEmail(str) {                                                 
+     var reg_email = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
+
+     if(!reg_email.test(str)) {                            
+          return true;         
+     }                            
+     else {                       
+          return false;         
+     }                         
+}
+ 
+
+
+function checkPw() {	
+	// 비밀번호 입력 데이터 가져오기 : name
+	var memberPw = document.getElementById("memberPw").value;
+	console.log("memberPw : " + memberPw);
+	
+	if(memberPw == "" || memberPw.trim().length == 0) {
+		document.getElementById("memberPw").focus();
+		document.getElementById("memberPwMsg").innerHTML = "비밀번호를 입력하세요";
+		document.getElementById("memberPwMsg").style.color = "red";
+		document.getElementById("memberPw").style.border = "solid 3px red";
+		document.getElementById("memberPw").value = "";
+		return false; // input type="submit"
+	} else if(confirmPw(memberPw)){
+		document.getElementById("memberPwMsg").innerHTML = "영문+숫자 조합 8자리 이상 입력해주세요.";
+		document.getElementById("memberPwMsg").style.color = "red";
+		document.getElementById("memberPw").style.border = "solid 3px red";
+		
+	} else {
+		document.getElementById("memberPw").style.border = "solid 1px black";
+		document.getElementById("memberPwMsg").innerHTML = "";
+	}
+	memberPw = memberPw.trim() // 사용자 입력데이터에 있는 공백데이터 제거
+			
+	return false;
+	// 이 부분을 추가하면 action으로 이동되지 않음므로 console에서 입력데이터 확인가능
+}
+
+//비밀번호가 잘못되었는지 확인하는 함수 
+function confirmPw(str) {                                                 
+    var reg_pw = /^([0-9a-zA-Z]){8,30}$/;
+
+    if(!reg_pw.test(str)) {                            
+         return true;         
+    }                            
+    else {                       
+         return false;         
+    }                         
+}    
+
+
+
+
+
+</script>
+</head>
+<body>
+
+<header>
+		<a href="main.html"><img src="./img/logo.png" style="height:40px; padding-top:5px;padding-left:5px;"></a>
+		<nav>
+			<ul class="topMenu">
+			<li> <a href="joinGosuMember.html" class="hederA" id="heaerA1">고수가입</a> </li>
+			<li> <a href="joinMember.html" class="hederA">회원가입</a> </li>
+			<li> <a href="usersGuide.html" class="hederA">이용안내</a> </li>
+			<li> <a href="findGosuMember.html" class="hederA">고수찾기</a> </li>
+			<li> <a href="login.html" class="hederA">로그인</a> </li>
+			</ul>
+		</nav>
+	</header>
+
+<main>
+<h1 id="h2">로그인</h1>
+
+<form method = "post">
+	
+	<div id="table1">
+	
+	<table id="table2">
+	
+	<tr><td>이메일</td></tr>
+	
+	<tr>
+		<td><input type ="text" name="memberId" id="memberId" placeholder="example@work.com" onkeyup="return checkId()"></td>
+    </tr>
+	<tr><td><span id="memberIdMsg"></span></td></tr>
+	
+	
+	<tr><td>비밀번호</td></tr>
+	
+	<tr>
+		<td><input type="password" name="memberPw" id="memberPw" placeholder="비밀번호를 입력해주세요." onkeyup="return checkPw()"></td>
+	</tr>
+	<tr><td><span id="memberPwMsg"></span></td></tr>
+	
+	<tr>
+		<td><a href="" id="findPw">비밀번호 찾기</a></td>
+	</tr>
+	
+	<tr>
+		<td><input type="button" value="이메일 로그인" onclick="return login();"></td> <!-- onclick="return checkForm();" -->
+	</tr>
+	
+	<tr>
+		<td align=center><a href="" id="joinMember">계정이 없으신가요?</a></td>
+	</tr>
+	
+	</table>
+		
+	</div>	
+</form>
+</main><br>
+
+<footer style="background-color:white;">
+
+	<table style="margin:auto;">
+ 
+	<tr><!-- 첫번째 줄 시작 -->
+	    <td style="width:500px; color:#00C7AE; font-size:x-large; font-weight:bold;">1599-5319</td>
+	    <td style="font-size:small; font-weight:bold;">숨고소개</td>
+	    <td style="font-size:small; font-weight:bold; padding-left:30px;">고객안내</td>
+	    <td style="font-size:small; font-weight:bold; padding-left:30px;">고수안내</td>
+	    <td style="font-size:small; font-weight:bold; padding-left:30px;">고객센터</td>
+	</tr><!-- 첫번째 줄 끝 -->
+	
+	<tr><!-- 두번째 줄 시작 -->
+	    <td valign=top style="width:500px; font-size:small; color:#737373;">평일 10:00 - 18:00<br>
+		(점심시간 13:00 - 14:00 제외 · 주말/공휴일 제외)
+		</td>
+	    <td valign=top style="font-size:small; color:#737373;">
+			<ul style="list-style: none; padding:0; margin:0; ">
+				<li>회사소개</li>
+				<li>채용안내</li>
+			</ul>
+	    </td>
+	    <td valign=top style="font-size:small; color:#737373;">
+			<ul style="list-style: none;  padding-left:30px; margin:0;">
+				<li>이용안내</li>
+				<li>안전정책</li>
+				<li>예상금액</li>
+				<li>고수찾기</li>
+				<li>숨고보증</li>
+			</ul>
+	    </td>
+	    <td valign=top style="font-size:small; color:#737373;">
+			<ul style="list-style: none;  padding-left:30px; margin:0;">
+				<li>이용안내</li>
+				<li>고수가이드</li>
+				<li>고수가입</li>
+				<li>고수센터</li>
+			</ul>
+	    </td>
+	    <td valign=top style="font-size:small; color:#737373;">
+			<ul style="list-style: none;  padding-left:30px; margin:0;">
+				<li>공지사항</li>
+				<li>자주묻는질문</li>
+			</ul>
+	    </td>
+	</tr><!-- 두번째 줄 끝 -->
+	
+	<tr><!-- 세번째 줄 시작 -->
+	    <td valign=top colspan="5"  style="height:200px;font-size:x-small; color:#737373;">이용약관 개인정보처리방침 사업자정보확인<br><br>
+			(주)브레이브모바일은 통신판매중개자로서 통신판매의 당사자가 아니며 개별 판매자가 제공하는 서비스에 대한 이행, 계약사항 등과 관련한 의무와 책임은 거래당사자에게 있습니다.<br><br>
+			상호명:(주)브레이브모바일 · 대표이사:KIM ROBIN H · 개인정보책임관리자:김태우 · 주소:서울특별시 강남구 테헤란로 431, 14층(삼성동, 라이언타워)<br>
+			사업자등록번호:120-88-22325 · 통신판매업신고증:제 2015-서울강남-00567 호 · 직업정보제공사업 신고번호:서울청 제 2019-21호<br>
+			고객센터:1599-5319 · 이메일:support@soomgo.com<br>
+			Copyright ©Brave Mobile Inc. All Rights Reserved.
+		</td>
+	</tr><!-- 두번째 줄 끝 -->
+	
+
+	</table>
+
+
+</footer>
+
+
+</body>
+</html>

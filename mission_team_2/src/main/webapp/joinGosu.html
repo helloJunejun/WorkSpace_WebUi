@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>숨고 : 숨은고수 - 고수가입 </title>
+
+<!--  js : external -->
+<link type="text/css" rel="stylesheet" href="css/common.css">
+
+<!--  js : internal -->
+<style type="text/css">
+   body{
+       background-color: #FAFAFA;
+    }
+   head{
+      background-color: #FFFFFF;
+   }
+   
+   
+   div{
+      margin : 1px 0; 
+   }
+   div.input_title{
+      font-size : 20px; font-weight :bold; color : navy;
+   }
+   div.input_contents{
+      font-size : 15px; font-weight :bold; color : navy;
+   }
+   input:focus {
+      outline : none;
+   }
+   div.input_row {
+   width: 70%;
+   }
+   div.box_form {
+   width: 600px;
+   }
+   
+   .div2 {
+        border: 2px solid;
+        border-radius: 1em;
+        width: 100px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+   }
+
+   .clicked {
+        color: red;
+   }
+   .previous:hover{
+        color:white;
+  background:#00C7AE;
+  }
+</style>
+
+<script type = "text/javascript">
+
+/*윈도우 로드 이벤트 함수 */
+window.onload= function(){
+   initForm();
+}
+/* 폼 초기화 함수 */
+function initForm(){
+
+}
+function checkboxOnOff(takeformElement,taketableElement){
+   var menu = document.menu.interestSelect;
+   
+	console.log(menu[takeformElement]);
+
+	for(index = 0; index < menu.length; index++) {
+			if(!menu[index].checked) {
+				menu[index].click();
+			
+			}
+		}
+
+	  
+	   
+/*    if (takeformElement.style.display=="none"){  
+      takeformElement.style.display = "inline-block";
+      //다른 것들은 checked = false되게 하고 싶다.
+   }else{
+      takeformElement.style.display = "none";
+      taketableElement.checked = false;
+   } */
+
+
+
+   
+   return takeformElement;
+}
+
+
+function selectLesson(){   
+   var takeformElement = document.getElementById("interestLession")[0];
+   var taketableElement = document.getElementById("lession");
+   checkboxOnOff(takeformElement,taketableElement);
+
+}
+
+function selectLiving(){   
+   var takeformElement = document.getElementById("interestLiving")[1];
+   var taketableElement = document.getElementById("living");
+   checkboxOnOff(takeformElement,taketableElement);
+}
+
+
+function selectEvent(){
+   var takeformElement = document.getElementById("interestEvent")[2];
+   var taketableElement = document.getElementById("event");
+   checkboxOnOff(takeformElement,taketableElement);
+}
+
+function selectBusiness(){
+   var takeformElement = document.getElementById("interestBusiness")[3];
+   var taketableElement = document.getElementById("business");
+   checkboxOnOff(takeformElement,taketableElement);
+}
+
+function selectDevelopment(){
+   var takeformElement = document.getElementById("interestDevelopment")[4];
+   var taketableElement = document.getElementById("development");
+   checkboxOnOff(takeformElement,taketableElement);
+}
+
+function selectHealthbeauty(){
+   var takeformElement = document.getElementById("interestHealthbeauty")[5];
+   var taketableElement = document.getElementById("healthbeauty");
+   checkboxOnOff(takeformElement,taketableElement);
+}
+
+function selectParttime(){
+   var takeformElement = document.getElementById("interestParttime")[6];
+   var taketableElement = document.getElementById("parttime");
+   checkboxOnOff(takeformElement,taketableElement);
+}
+
+function selectEtc(){
+   var takeformElement = document.getElementById("interestEtc")[7];
+   var taketableElement = document.getElementById("etc");
+   checkboxOnOff(takeformElement,taketableElement);
+}
+
+function manVisible(){   
+   var takeManButtonElement = document.getElementById("Manbuttion");
+   var takeWomanButtonElement = document.getElementById("Womanbuttion");
+   
+   takeWomanButtonElement.disabled=true;
+   
+   takeManButtonElement.style.backgroundColor ="#00C7AE";
+   takeManButtonElement.style.color ="white";
+   console.log(takeManButtonElement.value);
+   return takeManButtonElement.value;
+}
+
+function womanVisible(){
+   var takeManButtonElement = document.getElementById("Manbuttion");
+   var takeWomanButtonElement = document.getElementById("Womanbuttion");
+   
+   takeManButtonElement.disabled=true;   
+   
+   takeWomanButtonElement.style.backgroundColor ="#00C7AE";
+   takeWomanButtonElement.style.color ="white";
+   console.log(takeWomanButtonElement.value);
+}
+
+function buttonReset(){
+   var takeManButtonElement = document.getElementById("Manbuttion");
+   var takeWomanButtonElement = document.getElementById("Womanbuttion");
+
+   takeManButtonElement.style.backgroundColor ="white";
+   takeManButtonElement.style.color ="black";
+   
+   takeWomanButtonElement.style.backgroundColor ="white";
+   takeWomanButtonElement.style.color ="black";
+   
+   takeManButtonElement.disabled=false;   
+   takeWomanButtonElement.disabled=false;   
+   
+}
+
+
+
+</script>
+
+</head>
+<body>
+<header>
+      <span><img src="img/index_soomgo_logo.png"></span>
+      <nav>
+         <ul class="topMenu">
+         <li> <a href="joinGosuMember.html" class="hederA" id="gosuJoin">고수가입</a> </li>
+         <li> <a href="JoinMember.html" class="hederA">회원가입</a> </li>
+         <li> <a href="findGosuMember.html" class="hederA">고수찾기</a> </li>
+         <li> <a href="login.html" class="hederA">로그인</a> </li>
+         </ul>
+      </nav>
+</header>
+
+<div style="border : 0px solid; text-align: center;"><h1 style="font-size :38px">고수로 가입하실 분야를 선택하세요</h1></div>
+
+<!-- 1. 관심분야 선택 -->
+<form style="border : 1px solid #BDBDBD; border-radius : 1em; position : absolute; padding:30px;
+   width:800px; height:250px; top :200px; left :330px; background-color:#FFFFFF;" name="menu">
+<div style="color : navy; font-weight: bold;">1. 관심분야를 선택하세요</div>
+
+<!-- 관심분야 : 레슨 -->
+<div class ="input_Lession">
+   <div><input onclick ="selectLesson()" class="menu" type="radio" id="lession" name="interestSelect" value="lession">1. 레슨</div>
+<table  id="interestLession" style="display:none;">
+
+<tr>
+      <td><input type="checkbox" name = "interest" value="1">학업</td>
+      <td><input type="checkbox" name = "interest" value="2">외국어</td>
+      <td><input type="checkbox" name = "interest" value="3">공예</td>
+      <td><input type="checkbox" name = "interest" value="4">미술</td>
+      <td><input type="checkbox" name = "interest" value="5">음악이론/보컬</td>
+      </tr><tr>
+      <td><input type="checkbox" name = "interest" value="6">연기/마술</td>
+      <td><input type="checkbox" name = "interest" value="7">댄스</td>
+      <td><input type="checkbox" name = "interest" value="8">악기</td>
+      <td><input type="checkbox" name = "interest" value="9">국악</td>
+      <td><input type="checkbox" name = "interest" value="10">사진/영상</td>
+</tr>
+</table>
+</div>
+
+<!-- 관심분야 : 홈/리빙 -->
+<div class ="input_Lesson">
+   <div><input onclick ="selectLiving()" class="menu" type="radio" id="living" name="interestSelect" value="living" >2. 홈/리빙</div>
+<table class="menu" id="interestLiving" style="display : none;">
+<tr>
+      <td><input type="checkbox" name = "interest" value="1">이사</td>
+      <td><input type="checkbox" name = "interest" value="2">청소업체</td>
+      <td><input type="checkbox" name = "interest" value="3">인테리어</td>
+      <td><input type="checkbox" name = "interest" value="4">야외시공</td>
+      <td><input type="checkbox" name = "interest" value="5">부동산</td>
+      <td><input type="checkbox" name = "interest" value="6">철거/정리</td>
+      </tr><tr>
+      <td><input type="checkbox" name = "interest" value="7">펫/반려동물</td>
+      <td><input type="checkbox" name = "interest" value="8">문/창문</td>
+      <td><input type="checkbox" name = "interest" value="9">수도/보일러/전기</td>
+      <td><input type="checkbox" name = "interest" value="10">가전제품</td>
+      <td><input type="checkbox" name = "interest" value="11">가구</td>
+      <td><input type="checkbox" name = "interest" value="12">도우미</td>
+</tr>
+</table>
+</div>
+
+<!-- 관심분야 : 이벤트 -->
+<div class ="input_Event">
+   <div><input onclick ="selectEvent()" class="menu" type="radio" id="event" name="interestSelect" value="event" >3. 이벤트</div>
+<table class="menu" id="interestEvent" style="display : none;">
+<tr>
+      <td><input type="checkbox" name = "interest" value="1">웨딩</td>
+      <td><input type="checkbox" name = "interest" value="2">촬영 및 편집</td>
+      <td><input type="checkbox" name = "interest" value="3">뮤직/엔터테인먼트</td>
+      <td><input type="checkbox" name = "interest" value="4">음식</td>
+      </tr><tr>
+      <td><input type="checkbox" name = "interest" value="5">뷰티/미용</td>
+      <td><input type="checkbox" name = "interest" value="6">기획 및 장식</td>
+      <td><input type="checkbox" name = "interest" value="7">장비 및 자동차 대여</td>
+</tr>
+</table>
+</div>
+
+<!-- 관심분야 : 비즈니스 -->
+<div class ="input_Business">
+   <div><input onclick ="selectBusiness()" class="menu" type="radio" id="business" name="interestSelect" value="business" >4. 비즈니스</div>
+<table class="menu" id="interestBusiness" style="display : none;">
+<tr>
+      <td><input type="checkbox" name = "interest" value="1">번역</td>
+      <td><input type="checkbox" name = "interest" value="2">통역</td>
+      <td><input type="checkbox" name = "interest" value="3">문서</td>
+      <td><input type="checkbox" name = "interest" value="4">인쇄</td>
+      <td><input type="checkbox" name = "interest" value="5">마케팅</td>
+      <td><input type="checkbox" name = "interest" value="6">음향</td>
+      <td><input type="checkbox" name = "interest" value="7">아웃소싱</td>
+      <td><input type="checkbox" name = "interest" value="8">컨설팅</td>
+      <td><input type="checkbox" name = "interest" value="9">회계/사무/재무</td>
+      <td><input type="checkbox" name = "interest" value="10">인사</td>
+
+</tr>
+</table>
+</div>
+
+<!-- 관심분야 : 디자인/개발 -->
+<div class ="input_Development">
+   <div><input onclick ="selectDevelopment()" class="menu" type="radio" id="development" name="interestSelect" value="development" >5. 디자인/개발</div>
+<table class="menu" id="interestDevelopment" style="display : none;">
+<tr>
+      <td><input type="checkbox" name = "interest" value="1">디자인 외주</td>
+      <td><input type="checkbox" name = "interest" value="2">개발 외주</td>
+</tr>
+</table>
+</div>
+
+<!-- 관심분야 : 건강/미용 -->
+<div class ="input_Healthbeauty">
+   <div><input onclick ="selectHealthbeauty()" class="menu" type="radio" id="healthbeauty" name="interestSelect" value="healthbeauty" >6. 건강/미용</div>
+<table class="menu" id="interestHealthbeauty" style="display : none;">
+<tr>
+      <td><input type="checkbox" name = "interest" value="1">심리</td>
+      <td><input type="checkbox" name = "interest" value="2">미용</td>
+      <td><input type="checkbox" name = "interest" value="3">건강</td>
+
+</tr>
+</table>
+</div>
+
+<!-- 관심분야 : 알바 -->
+<div class ="input_Parttime">
+   <div><input onclick ="selectParttime()" class="menu" type="radio" id="parttime" name="interestSelect" value="parttime" >7. 알바</div>
+<table class="menu" id="interestParttime" style="display : none;">
+<tr>
+      <td><input type="checkbox" name = "interest" value="1">서빙.주방 알바</td>
+      <td><input type="checkbox" name = "interest" value="2">매장관리.판매 알바</td>
+      <td><input type="checkbox" name = "interest" value="3">서비스.행사 알바</td>
+      <td><input type="checkbox" name = "interest" value="4">문화.여가.생활 알바</td>
+      <td><input type="checkbox" name = "interest" value="5">방송.미디어 알바</td>
+      </tr><tr>
+      <td><input type="checkbox" name = "interest" value="6">사무직 알바</td>
+      <td><input type="checkbox" name = "interest" value="7">생산.기능.노무 알바</td>
+      <td><input type="checkbox" name = "interest" value="8">운전.배달.유통 알바</td>
+      <td><input type="checkbox" name = "interest" value="9">병원.간호.연구 알바</td>
+      <td><input type="checkbox" name = "interest" value="10">기타</td>
+</tr>
+</table>
+</div>
+
+<!-- 관심분야 : 기타 -->
+<div class ="input_Etc">
+   <div><input onclick ="selectEtc()" class="menu" type="radio" id="etc" name="interestSelect" value="etc" >8. 기타</div>
+<table class="menu" id="interestEtc" style="display : none;">
+<tr>
+      <td><input type="checkbox" name = "interest" value="1">여행</td>
+      <td><input type="checkbox" name = "interest" value="2">공예제작</td>
+      <td><input type="checkbox" name = "interest" value="3">의류/잡화</td>
+      <td><input type="checkbox" name = "interest" value="4">자동차</td>
+      <td><input type="checkbox" name = "interest" value="5">대여/대관</td>
+      <td><input type="checkbox" name = "interest" value="6">금융</td>
+      <td><input type="checkbox" name = "interest" value="7">법률</td>
+      <td><input type="checkbox" name = "interest" value="8">그 외</td>
+</tr>
+</table>
+</div>
+
+</form>
+
+<!-- 2. 활동 지역의 주소  -->
+
+<form style="border : 1px solid #BDBDBD; border-radius : 1em; position : absolute; padding:30px;
+   width:800px; height:100px; top : 550px; left : 330px; background-color:#FFFFFF;">
+   <div style="color : navy; font-weight: bold; size :3">2. 고수님의 활동 지역의 주소를 알려주세요.</div>
+   
+   <table id="interestEtc" style="display : inline-block;">
+   <tr><td color = gray>활동 지역은 근처의 고객을 찾는데 도움이 됩니다.</td></tr>
+   <tr><td><input type="text" name = "address" id = "address" size = 50
+         style="border-right:0px; border-top:0px; border-left:0px;" placeholder="예) 판교역로 235, 분당 주공, 삼평동 681"></td></tr>
+   </table>
+</form>
+
+<!-- 3. 필수정보 입력 -->
+<form style="border : 1px solid #BDBDBD; border-radius : 1em; position : absolute; padding:30px; 
+   width:800px; height:300px; top : 750px; left : 330px; background-color:#FFFFFF;">
+<div style="color : navy; font-weight: bold;">3. 필수 정보를 입력해주세요.</div>
+
+<!-- 컨텐츠 -->
+<div class="box_form">
+
+
+   <!-- 이름 -->
+   <div class="input_row">
+      <div class="input_label">이름</div>
+      <div><input type="text" name="name" placeholder="이름(실명)을 입력해주세요."></div>
+   </div>
+   <p>
+   <!-- 성별 -->
+   <div class="input_row">성별   </div>
+
+      <div class="div1">
+         <input type = "button" value="남자" id=Manbuttion onclick="manVisible()" 
+         style = "width:100px; height:30px; background-color : white;   border-radius: 3px; border :  1px solid #EAEAEA;"> 
+         <input type = "button" value="여자" id=Womanbuttion onclick="womanVisible()" 
+           style = "width:100px; height:30px; background-color : white;   border-radius: 3px; border :  1px solid #EAEAEA;"> 
+           <span></span>
+           <input type = "button" value="초기화" id=reset onclick="buttonReset()" 
+           style = " background-color : white;   border-radius: 3px; border :  1px solid #EAEAEA;"> 
+       </div>
+   <p>
+   <!-- 이메일 -->
+   <div class="input_row">
+      <div class="input_label">이메일</div>
+      <div><input type="text" name="email" placeholder="id@soomgo.com"></div>
+   </div>
+   <p>
+   <!-- 비밀번호 -->
+   <div class="input_row">
+      <div class="input_label">비밀번호</div>
+      <div><input type="password" name="memberPw" placeholder="영문+숫자 조합 8자리 이상 입력해주세요"></div>
+   </div>
+   <p>
+   <!-- 휴대폰 -->
+   <div class="input_row">
+      <div class="input_label">휴대전화 번호 인증</div>
+      <div><input type="text" name="mobile" placeholder="예) 010-1234-1234"></div>
+   </div>
+
+</div>
+</form>
+
+   <!-- submit / reset -->
+
+<table style = "position : absolute; top : 1150px; left : 650px;">
+<tr><td>
+   <input class="previous" type="button" value="이전" class="normal" onclick="location.href='main.html'"
+   style = "width:100px; height:30px; font-weight : bold; background-color : white;  
+   color :#00C7AE;  border-radius: 3px; border :  1px solid #EAEAEA; top : 1000px">
+   </td>
+   <td>
+   <input type="submit" value="가입하기" class="btn_submit normal" onclick="location.href='main.html'"
+   style = "width:100px; height:30px; font-weight : bold; background-color : #00C7AE; 
+   color:white;  border-radius: 3px; border :  1px solid #EAEAEA; top : 1000px">
+   </td>
+</tr>
+</table>
+
+
+</body>
+</html>

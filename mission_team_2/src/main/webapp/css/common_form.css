@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+/* form 양식 css : css/common_form.css */
+
+input.btn_submit {
+	background-color: rgba(255, 0, 0, 0.3);
+
+}
+
+input.normal {
+	border-radius: 10px;
+	width: 80px;
+	height: 25px;
+	
+}
+
+/* 입력항목에 포커스가 올때 배경색 변경 */
+input[type="text"]:foucs, input[type="password"]:focus, textarea:focus {
+	background-color: rgba(255, 0, 0, 0.3);	
+}
